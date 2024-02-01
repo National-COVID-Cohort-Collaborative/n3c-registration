@@ -21,7 +21,7 @@
 
 
 	<div class="container center-box shadow-border">
-    	<h2 class="header-text"><img src="images/n3c_logo.png" class="n3c_logo_header" alt="N3C Logo">N3C & CD2H Login/Registration</h2>
+    	<h2 class="header-text"><img src="images/n3c_logo.png" class="n3c_logo_header" alt="N3C Logo">N3C &amp; CD2H Login/Registration</h2>
     	<div style="text-align:center;">
 			<h4 style="margin-bottom:30px;">Welcome!  Thank you for your interest in the CD2H program and N3C initiative.</h4>
  			
