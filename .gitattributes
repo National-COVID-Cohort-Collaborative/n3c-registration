@@ -10,5 +10,17 @@
 .settings/org.eclipse.wst.jsdt.ui.superType.name -text
 .settings/org.eclipse.wst.validation.prefs -text
 WebContent/META-INF/MANIFEST.MF -text
+WebContent/WEB-INF/clinical[!!-~]n3c[!!-~]register_IDP[!!-~]metadata.xml -text
 WebContent/WEB-INF/web.xml -text
+WebContent/fake_register.jsp -text
+WebContent/footer.jsp -text
+WebContent/head.jsp -text
+WebContent/images/n3c_logo.png -text
+WebContent/index.jsp -text
+WebContent/logout.jsp -text
+WebContent/navbar.jsp -text
+WebContent/resources/autocomplete.css -text
+WebContent/resources/autocomplete.js -text
+WebContent/resources/d3.v4.min.js -text
+WebContent/resources/n3c_login_style.css -text
 /pom.xml -text
