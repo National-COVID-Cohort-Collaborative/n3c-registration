@@ -10,7 +10,6 @@
 .settings/org.eclipse.wst.jsdt.ui.superType.name -text
 .settings/org.eclipse.wst.validation.prefs -text
 WebContent/META-INF/MANIFEST.MF -text
-WebContent/WEB-INF/clinical[!!-~]n3c[!!-~]register_IDP[!!-~]metadata.xml -text
 WebContent/WEB-INF/web.xml -text
 WebContent/acs.jsp -text
 WebContent/attrs.jsp -text
