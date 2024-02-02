@@ -5,18 +5,6 @@
 
     <c:set var="user_email" scope="session">${attributes.get("email")[0]}</c:set>
 
-    <sql:query var="admins" dataSource="jdbc/N3CRegistrationTagLib">
-        select email from tenant_admin.admin where email = ?
-        <sql:param>${user_email}</sql:param>
-    </sql:query>
-    <c:forEach items="${admins.rows}" var="row" varStatus="rowCounter">
-        <c:set scope="session" var='admin' value='yes' />
-    </c:forEach>
- 
-    <c:if test="${not empty admin}">
-        <c:redirect url="admin.jsp"/>
-    </c:if>
-
     <c:set var="first_name">${attributes.get("given_name")[0]}</c:set>
     <c:set var="last_name">${attributes.get("family_name")[0]}</c:set>
     <c:set var="institution">${attributes.get("org")[0]}</c:set>

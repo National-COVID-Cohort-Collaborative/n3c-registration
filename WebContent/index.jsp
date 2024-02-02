@@ -21,13 +21,13 @@
 
 
 	<div class="container center-box shadow-border">
-    	<h2 class="header-text"><img src="images/n3c_logo.png" class="n3c_logo_header" alt="N3C Logo">N3C &amp; CD2H Login/Registration</h2>
+    	<h2 class="header-text"><img src="images/n3c_logo.png" class="n3c_logo_header" alt="N3C Logo">N3C Registration</h2>
     	<div style="text-align:center;">
-			<h4 style="margin-bottom:30px;">Welcome!  Thank you for your interest in the CD2H program and N3C initiative.</h4>
+			<h4 style="margin-bottom:30px;">Welcome!  Thank you for your interest in the National Clinical Cohort Collaborative (N3C).</h4>
  			
     		
 			<p>Please register your profile information on the following page.  After submitting your information, please follow the <a href="https://covid.cd2h.org/onboarding_instructions" target="_blank">onboarding instructions</a>
-			to request access to the N3C Team Drive, Workstream and/or Subgroup specific mailing lists, N3C calendar, Slack, and GitHub.</p>
+			to request access to the N3C Team Drive, mailing lists, N3C calendar, Slack, and GitHub.</p>
  
  			<p>You will receive a copy of your responses and are encouraged to update your information as needed.</p>
  			

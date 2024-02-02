@@ -14,6 +14,12 @@ WebContent/WEB-INF/web.xml -text
 WebContent/acs.jsp -text
 WebContent/attrs.jsp -text
 WebContent/dologin.jsp -text
+WebContent/dologout.jsp -text
+WebContent/email/citizen_pending.jsp -text
+WebContent/email/dua_pending.jsp -text
+WebContent/email/in_process.jsp -text
+WebContent/email/problem_resolution.jsp -text
+WebContent/email/send.jsp -text
 WebContent/fake_register.jsp -text
 WebContent/footer.jsp -text
 WebContent/head.jsp -text
@@ -22,10 +28,13 @@ WebContent/index.jsp -text
 WebContent/logout.jsp -text
 WebContent/metadata.jsp -text
 WebContent/navbar.jsp -text
+WebContent/profile.jsp -text
+WebContent/register.jsp -text
 WebContent/resources/autocomplete.css -text
 WebContent/resources/autocomplete.js -text
 WebContent/resources/d3.v4.min.js -text
 WebContent/resources/n3c_login_style.css -text
 WebContent/session.jsp -text
 WebContent/sls.jsp -text
+WebContent/submit_registration.jsp -text
 /pom.xml -text
