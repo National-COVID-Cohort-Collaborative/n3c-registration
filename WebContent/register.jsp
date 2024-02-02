@@ -53,12 +53,12 @@
       				<input name="institution" type="text" class="form-control" id="institution" value="${tag_registration.getInstitution()}">
       				<c:if test="${tag_registration.getOfficialInstitution() != 'login.gov' && tag_registration.getOfficialInstitution() != 'NIH' }">
 		                <sql:query var="rors" dataSource="jdbc/N3CRegistrationTagLib">
-		                    select institutionid,duaexecuted from n3c_admin.dua_status where official_institution = ?
+		                    select institutionid,tenantduaexecuted from tenant_admin.dua_status where official_institution = ?
 		                    <sql:param><n3c:registrationOfficialInstitution/></sql:param>
 		                </sql:query>
 		                <c:forEach items="${rors.rows}" var="row" varStatus="rowCounter">
 		                	<c:set var='found' value='yes'/>
-		                	<c:set var='executed' value='${row.duaexecuted}'/>
+		                	<c:set var='executed' value='${row.tenantduaexecuted}'/>
 		                </c:forEach>
 		                <c:choose>
 		                <c:when test="${empty found}">

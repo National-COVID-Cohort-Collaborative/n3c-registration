@@ -6,7 +6,7 @@
 
 <n3c:registration email="${user_email}">
 	<sql:query var="rors" dataSource="jdbc/N3CRegistrationTagLib">
-		select email from palantir.n3c_user where email = ? and (citizen_scientist or ror_id in (select id from palantir.n3c_organization where dua_signed is not null));
+		select email from palantir.tenant_user where email = ? and (citizen_scientist or ror_id in (select id from palantir.tenant_organization where dua_signed is not null));
 		<sql:param><n3c:registrationEmail /></sql:param>
 	</sql:query>
 	<c:forEach items="${rors.rows}" var="row" varStatus="rowCounter">
