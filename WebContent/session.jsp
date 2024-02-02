@@ -5,8 +5,8 @@
 
     <c:set var="user_email" scope="session">${attributes.get("email")[0]}</c:set>
 
-    <sql:query var="admins" dataSource="jdbc/N3CLoginTagLib">
-        select email from n3c_admin.admin where email = ?
+    <sql:query var="admins" dataSource="jdbc/N3CRegistrationTagLib">
+        select email from tenant_admin.admin where email = ?
         <sql:param>${user_email}</sql:param>
     </sql:query>
     <c:forEach items="${admins.rows}" var="row" varStatus="rowCounter">
