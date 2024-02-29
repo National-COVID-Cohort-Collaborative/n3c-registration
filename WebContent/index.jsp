@@ -26,7 +26,7 @@
 			<h4 style="margin-bottom:30px;">Welcome!  Thank you for your interest in the National Clinical Cohort Collaborative (N3C).</h4>
  			
     		
-			<p>Please register your profile information on the following page.  After submitting your information, please follow the <a href="https://covid.cd2h.org/onboarding_instructions" target="_blank">onboarding instructions</a>
+			<p>Please register your profile information on the following page.  After submitting your information, please follow the <a href="https://covid.cd2h.org/for-tenant-researchers" target="_blank">onboarding instructions</a>
 			to request access to the N3C Team Drive, mailing lists, N3C calendar, Slack, and GitHub.</p>
  
  			<p>You will receive a copy of your responses and are encouraged to update your information as needed.</p>
