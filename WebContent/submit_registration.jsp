@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="n3c" uri="http://icts.uiowa.edu/N3CRegistrationTagLib"%>
+<%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
 <c:if test="${empty user_email}">
     <c:set scope="session" var="not_logged_in" value="t"/>
     <c:redirect url="index.jsp"/>
@@ -20,5 +21,11 @@
 	<n3c:registrationTwitterId twitterId="${param.twitter}" />
 	<n3c:registrationUpdatedToNow />
 </n3c:registration>
+
+<c:if test="${not util:regexMatches(param.orcid,'^([0-9]{4}-){3}[0-9]{3}[0-9X]$')}">
+    <c:redirect url="register.jsp">
+    	<c:param name="alert">An ORCiD ID is required.</c:param>
+    </c:redirect>
+</c:if>
 
 <c:redirect url="profile.jsp" />

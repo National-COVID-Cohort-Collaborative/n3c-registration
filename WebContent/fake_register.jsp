@@ -5,7 +5,7 @@
 
     <c:set var="user_email" scope="session" value="david-eichmann@uiowa.edu"/>
     
-    <sql:query var="admins" dataSource="jdbc/N3CLoginTagLib">
+    <sql:query var="admins" dataSource="jdbc/N3CRegistrationTagLib">
         select email from n3c_admin.admin where email = ?
         <sql:param>${user_email}</sql:param>
     </sql:query>
@@ -13,10 +13,6 @@
         <c:set scope="session" var='admin' value='yes' />
     </c:forEach>
  
-    <c:if test="${not empty admin}">
-        <c:redirect url="admin.jsp"/>
-    </c:if>
-
     <c:if test="${n3c:registrationExists(user_email)}">
         <c:redirect url="profile.jsp"/>
     </c:if>

@@ -26,6 +26,10 @@
     	
     	<n3c:registration email="${user_email}">
     	
+    	<c:if test="${not empty param.alert }">
+    		<h3 style="color:red">${param.alert}</h3>
+    	</c:if>
+    	
     	<form name="registration" method='POST' action='submit_registration.jsp' autocomplete="off" onsubmit="return validateForm()" >
   			<div class="form-group row">
     			<label for="email" class="col-sm-2 col-form-label">Email</label>

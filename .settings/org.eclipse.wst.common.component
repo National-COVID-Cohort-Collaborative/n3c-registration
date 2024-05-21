@@ -13,6 +13,9 @@
         <dependent-module archiveName="N3CRegistrationTagLib-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/N3CRegistrationTagLib/N3CRegistrationTagLib">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="MailTagLib-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/MailTagLib/MailTagLib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
                 
         <property name="context-root" value="n3c-registration"/>
                 
