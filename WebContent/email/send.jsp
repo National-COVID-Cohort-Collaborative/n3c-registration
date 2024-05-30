@@ -6,7 +6,7 @@
 
 <n3c:registration email="${user_email}">
 	<sql:query var="rors" dataSource="jdbc/N3CRegistrationTagLib">
-		select email from palantir.tenant_user where email = ? and (citizen_scientist or ror_id in (select id from palantir.tenant_organization where dua_signed is not null));
+		select email from palantir.tenant_user where email = ? and (citizen_scientist or ror_id in (select institutionid from palantir.tenant_organization where tenantduaexecuted is not null));
 		<sql:param><n3c:registrationEmail /></sql:param>
 	</sql:query>
 	<c:forEach items="${rors.rows}" var="row" varStatus="rowCounter">
@@ -18,14 +18,14 @@
 			select email from palantir.n3c_user
 			where email = ?
 			  and (
-			  	ror_id in (select id from palantir.n3c_organization where dua_signed is null)
+			  	ror_id in (select institutionid from palantir.tenant_organization where dua_signed is null)
 			  	or (
 			  		ror_id in (select id from ror.organization)
-			  	and ror_id not in (select id from palantir.n3c_organization)
+			  	and ror_id not in (select institutionid from palantir.tenant_organization)
 			  	)
 			  	or (
 			  		email like '%.edu'
-			  	and ror_id not in (select id from palantir.n3c_organization)
+			  	and ror_id not in (select institutionid from palantir.tenant_organization)
 			  	)
 			  );
 			<sql:param><n3c:registrationEmail /></sql:param>
@@ -37,7 +37,7 @@
 	
 	<c:if test="${empty valid and empty dua_pending}">
 		<sql:query var="rors" dataSource="jdbc/N3CRegistrationTagLib">
-			select email from palantir.n3c_user where email = ? and not citizen_scientist and ror_id not in (select id from palantir.n3c_organization);
+			select email from palantir.n3c_user where email = ? and not citizen_scientist and ror_id not in (select institutionid from palantir.tenant_organization);
 			<sql:param><n3c:registrationEmail /></sql:param>
 		</sql:query>
 		<c:forEach items="${rors.rows}" var="row" varStatus="rowCounter">
