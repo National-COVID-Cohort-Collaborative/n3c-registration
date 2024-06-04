@@ -52,6 +52,7 @@
 				<mail:recipientAddress address="${user_email}" name="${tag_registration.getFirstName()} ${tag_registration.getLastName()}" />
 				<mail:bccAddress address="david-eichmann@uiowa.edu"/>
                 <mail:bccAddress address="n3c-reg@ctsa.io"/>
+                <mail:bccAddress address="NCATSAuthSupport@mail.nih.gov"/>
 				<mail:subject>N3C Registration in Process</mail:subject>
 				<mail:htmlBody>
 					<jsp:include page="in_process.jsp"/>
@@ -63,6 +64,7 @@
 				<mail:fromAddress address="noreply@ctsa.io" name="The N3C Team" />
 				<mail:recipientAddress address="${user_email}" name="${tag_registration.getFirstName()} ${tag_registration.getLastName()}" />
                 <mail:bccAddress address="david-eichmann@uiowa.edu"/>
+                <mail:bccAddress address="NCATSAuthSupport@mail.nih.gov"/>
 				<mail:subject>N3C Registration Pending</mail:subject>
 				<mail:htmlBody>
 					<jsp:include page="dua_pending.jsp"/>
@@ -74,6 +76,7 @@
 				<mail:fromAddress address="noreply@ctsa.io" name="The N3C Team" />
 				<mail:recipientAddress address="${user_email}" name="${tag_registration.getFirstName()} ${tag_registration.getLastName()}" />
                 <mail:bccAddress address="david-eichmann@uiowa.edu"/>
+                <mail:bccAddress address="NCATSAuthSupport@mail.nih.gov"/>
 				<mail:subject>N3C Registration Pending</mail:subject>
 				<mail:htmlBody>
 					<jsp:include page="citizen_pending.jsp"/>
@@ -85,6 +88,7 @@
 				<mail:fromAddress address="noreply@ctsa.io" name="The N3C Team" />
 				<mail:recipientAddress address="${user_email}" name="${tag_registration.getFirstName()} ${tag_registration.getLastName()}" />
                 <mail:bccAddress address="david-eichmann@uiowa.edu"/>
+                <mail:bccAddress address="NCATSAuthSupport@mail.nih.gov"/>
 				<mail:subject>N3C Registration in Problem Resolution</mail:subject>
 				<mail:htmlBody>
 					<jsp:include page="problem_resolution.jsp"/>
