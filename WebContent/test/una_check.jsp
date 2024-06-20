@@ -6,18 +6,15 @@
 <h2>UNA check: ${param.email}</h2>
 
 <sql:query var="dua" dataSource="jdbc/N3CRegistrationTagLib">
-	select incommon_id,incommon_name from n3c_admin.dua_organization where incommon_id is not null and email_domain = ?
-	union 
-	select incommon_id,incommon_name from tenant_admin.dua_organization where incommon_id is not null and email_domain = ?
-	<sql:param>${param.email}</sql:param>
+	select id,name from incommon.domain_map where domain = ?
 	<sql:param>${param.email}</sql:param>
 </sql:query>
 
 <c:forEach items="${dua.rows}" var="row" varStatus="rowCounter">
-	<p><b>${row.incommon_name}</b> is federated with InCommon, which supports use of your institutional credentials
+	<p><b>${row.name}</b> is federated with InCommon, which supports use of your institutional credentials
 	to log into N3C. Click on the button below to continue your registration.</p>
 	<a href="https://unite.nih.gov" class="btn btn-primary btn-n3c active" role="button" aria-pressed="true">Login Via InCommon</a>
-	<c:set var="incommon_id">${row.incommon_id}</c:set>
+	<c:set var="incommon_id">${row.id}</c:set>
 </c:forEach>
 
 <c:if test="${empty incommon_id}">

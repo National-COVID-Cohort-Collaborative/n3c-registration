@@ -14,7 +14,7 @@
 	<script type="text/javascript">
     function process() {
     	var form = new FormData(document.getElementById("email"));
-    	var inputValue = form.get("email");
+    	var inputValue = form.get("email").toLowerCase();
     	if (inputValue.endsWith("gmail.com")) {
     		alert("Use of GMail addresses for registration is not allowed. Please use your institutional email.")
     		return false;
