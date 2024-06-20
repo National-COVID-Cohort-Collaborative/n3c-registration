@@ -1,0 +1,418 @@
+
+<style>
+
+.dash-highlight{
+	background: #9efff7;
+}
+
+.filter_checks.sticky-top{
+	background: white;
+}
+
+.filters-label{
+	display:flex;
+	flex-wrap:nowrap;
+}
+
+.filters-label span.btn:after{
+	font-family: "Font Awesome\ 5 Free"; 
+	content: "\f08d";
+  	font-weight: 900;
+}
+
+.filters-label span.btn.stuck:after{
+	font-family: "Font Awesome\ 5 Free"; 
+	content: "\f55a";
+	font-weight: 900;
+}
+
+@media (max-width: 992px){
+	.filters-label span.btn {
+    	display: none;
+	}
+}
+
+.kpi_no_update{
+	color: #535f74;
+}
+
+.kpi-small-note{
+	color: gray;
+}
+
+.low-padding-list{
+	padding-inline-start: 15px;
+}
+
+.viz-container{
+	margin-top: 15px;
+}
+
+.progress{
+	height: 10px;
+}
+
+@media (max-width: 1200px){
+	.container-large {
+    	max-width: 100% !important;
+	}
+}
+
+@media (min-width: 1200px){
+	.container-large {
+    	max-width: 100%;
+	}
+}
+
+.block_header{
+	text-align:center; 
+	color:#fff; 
+	background: #454F82;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:18px; 
+	padding: 3px; 
+	margin-top:20px;
+}
+
+.kpi tr {
+	width: auto;
+}
+
+.block_header{
+	background:none;
+}
+
+.kpi_ind{
+	text-align:center;
+}
+
+.kpi_section .dropdown-item{
+	white-space: unset;
+}
+
+#${param.block}_btn_hide{
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: rotate(-90deg) translate(-20px, -77px);
+    border-radius: 0;
+}
+
+
+#${param.block}_btn_show {
+    /* position: absolute; */
+    left: 0px;
+    top: 0px;
+    transform: rotate(-90deg) translate(-24px, 54px);
+    border-radius: 0;
+}
+
+.drop_filter{
+	right: 0;
+	left: auto;
+	width: max-content;
+}
+
+.dash_filter_header{
+	margin-right: 30px;
+    margin-left: 30px;
+}
+
+.show_clear{
+	display: inline-block;
+}
+
+.no_clear{
+	display:none;
+}
+
+.show_filt:after{
+	border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+.hide_filt:after{
+	border-top: 0;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0.3em solid;
+    border-left: 0.3em solid transparent;
+}
+
+
+.multi-line-filter-name{
+	max-width:85%; 
+	display: inline-block;
+}
+
+.viz_options_dropdown{
+	text-align: left; 
+	font-size: 1.2rem;
+}
+
+
+@media (max-width: 768px) {
+  .viz_options_dropdown, 
+  .filter_button_container{
+    text-align: center;
+  }
+}
+
+.select2-container--default .select2-results__option--disabled{
+	display:none;
+}
+
+.dash_viz{
+	text-align:center;
+}
+
+.kpi_border_right{
+	border-right: 2px solid #d0e3f6;
+    border-radius: 0;
+}
+
+.data-as-of {
+    margin-top: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 991px) {
+  #related_dashboards {
+    display: none; 
+  }
+}
+
+
+
+/* change in dashboard style when all done */
+.multiselect-container .multiselect-all:focus, .multiselect-container .multiselect-all:hover, .multiselect-container .multiselect-group:focus, .multiselect-container .multiselect-group:hover, .multiselect-container .multiselect-option:focus, .multiselect-container .multiselect-option:hover {
+    background-color: #edf6ff!important;
+}
+
+.multiselect-container .multiselect-all.active:not(.multiselect-active-item-fallback), .multiselect-container .multiselect-all:not(.multiselect-active-item-fallback):active, .multiselect-container .multiselect-group.active:not(.multiselect-active-item-fallback), .multiselect-container .multiselect-group:not(.multiselect-active-item-fallback):active, .multiselect-container .multiselect-option.active:not(.multiselect-active-item-fallback), .multiselect-container .multiselect-option:not(.multiselect-active-item-fallback):active {
+    background-color: #edf6ff;
+    color: #000;
+}
+
+.table-hover tbody tr:hover {
+    color: #212529;
+    background-color: #edf6ff;
+}
+
+.viz-header-section {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+
+.panel{
+	margin-top: 30px;
+}
+
+#d3viz .kpi_section {
+    text-align: left;
+}
+
+.small-viz-panel{
+	padding: 10px;
+}
+
+/* filter stuff */
+.filter_checks .custom-select{
+	height: auto;
+}
+
+.filter_checks .btn-group{
+	width: 100%;
+}
+
+.filter_checks .multiselect{
+	overflow: visible;
+	white-space: normal;
+	word-wrap: break-word;
+}
+
+.filter_checks .multiselect-container.dropdown-menu.show{
+	width: 100%;
+}
+
+#related_dashboards .card{
+	cursor: pointer;
+}
+
+
+/* from demographics overview dash */
+.filter-section {
+    margin-top: 20px;
+}
+
+
+/* test of multiselect to list style */
+
+.multiselect-native-select{
+	width: 100%
+}
+.checkbox-list-container .checkbox-list > li > a {
+	display: block;
+	padding: 3px 0;
+}
+
+.checkbox-list-container .checkbox-list > .multiselect-option.active,
+.checkbox-list-container .checkbox-list > .multiselect-option.active:hover,
+.checkbox-list-container .checkbox-list > .multiselect-option.active:focus {
+	color: #333;
+}
+
+.checkbox-list-container .checkbox-list > .multiselect-option.disabled,
+.checkbox-list-container .checkbox-list > .multiselect-option.disabled:hover,
+.checkbox-list-container .checkbox-list > .multiselect-option.disabled:focus {
+	color: #777;
+}
+
+.checkbox-list-container .checkbox-list > .multiselect-option.disabled:hover,
+.checkbox-list-container .checkbox-list > .multiselect-option.disabled:focus {
+	text-decoration: none;
+	cursor: unset;
+	background-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+.checkbox-list-container .multiselect-container.checkbox-list {
+	position: static;
+}
+
+
+.filter_drop_button{
+	width: 100%;
+}
+
+.filter_drop_button:focus{
+	box-shadow: none;
+}
+
+.filter_checks .filter_drop_button:after {
+    content: <i class="towerIcon"></i>;
+    content: '\f068';
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    float: right;
+}
+
+.filter_checks .filter_drop_button.collapsed:after {
+    content: <i class="towerIcon"></i>;
+    content: '\f067';
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    float: right;
+}
+
+.filter_checks .card-header{
+	padding: 2px;
+}
+
+.filter_checks .panel-body{
+	border: 2px solid #eeeeee;
+    border-radius: 5px;
+}
+
+.filter_checks .card{
+	border: 0px;
+	background-color: unset;
+}
+
+.filter_checks .card-header{
+	background-color: unset;
+}
+
+.related_dashboards .related-img{
+	opacity: .7;
+}
+
+#related_dashboards .card-title{
+	color: #686767;
+}
+
+#related_dashboards .card-body{
+	padding: 10px;
+}
+
+#related_dashboards .card{
+	border: 0px;
+	box-shadow: 4px 4px 15px -2px rgb(197 222 255);
+    -webkit-box-shadow: 4px 4px 15px -2px rgb(197 222 255);
+    -moz-box-shadow: 4px 4px 15px -2px rgba(197,222,255,1);
+}
+
+.side-col h4{
+	font-weight: 300;
+}
+
+@media only screen and (max-width: 1400px) {
+	.side-col .card-body{
+		padding: 0px;
+	}
+}
+
+.loading{
+	text-align:center;
+}
+
+/* Should go over the layout to try not to overflow */
+.filter_checks label.form-check-label {
+    overflow-wrap: anywhere;
+}
+
+
+#legend{
+/* 	padding: 10px;  */
+/* 	border: 1px solid lightgray; */
+}
+
+#filters .filter_col{
+	cursor: pointer;
+}
+
+/* clip the legend on the viz but keep it there for download */
+.dash_viz.clip {
+    width: 100%;
+    overflow: hidden;
+}
+
+.clipsvg{
+	background-color: white;
+}
+
+
+
+/* limitations section */
+
+#question-limits{
+	margin-top: 30px;
+}
+
+/* pre filtered notice section */
+.viz_info_box{
+	margin-top: 20px;
+}
+
+
+/* viz style */
+
+.axis {
+    font-size: 14px;
+}
+
+.axis .domain {
+    display: none;
+}
+
+</style>
