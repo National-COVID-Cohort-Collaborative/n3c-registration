@@ -143,6 +143,7 @@ WebContent/resources/bootstrap4/js/bootstrap.min.js.map -text
 WebContent/resources/d3-scale-radial.js -text
 WebContent/resources/d3-tip.js -text
 WebContent/resources/d3.hive.min.js -text
+WebContent/resources/d3.v4.min.js -text
 WebContent/resources/dash_style.css -text
 WebContent/resources/dashboard_style.css -text
 WebContent/resources/jquery-colorize.js -text
@@ -155,6 +156,7 @@ WebContent/resources/map_data/gz_2010_us_040_00_5m.json -text
 WebContent/resources/map_data/gz_2010_us_050_00_20m.json -text
 WebContent/resources/map_data/gz_2010_us_050_00_500k.json -text
 WebContent/resources/map_data/gz_2010_us_050_00_5m.json -text
+WebContent/resources/n3c_login_style.css -text
 WebContent/resources/select2/select2.js -text
 WebContent/resources/select2/select2.min.css -text
 WebContent/resources/select2/select2.min.js -text
