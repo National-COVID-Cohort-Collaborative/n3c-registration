@@ -6,7 +6,7 @@
 <h2>DUA check: ${param.email}</h2>
 
 <sql:query var="dua" dataSource="jdbc/N3CRegistrationTagLib">
-	select ror_id,ror_name,duaexecuted as date from n3c_admin.dua_organization,n3c_admin.dua_master where dua_organization.ror_id=dua_master.institutionid and email_domain = ?
+	select ror_id,ror_name,duaexecuted as date from n3c_admin.dua_organization,n3c_admin.dua_master where dua_organization.ror_id=dua_master.institutionid and ? ~ (email_domain||'$')
 	<sql:param>${param.email}</sql:param>
 </sql:query>
 
@@ -25,7 +25,7 @@
 </c:if>
 
 <sql:query var="dua" dataSource="jdbc/N3CRegistrationTagLib">
-	select ror_id,ror_name,tenantduaexecuted as date from tenant_admin.dua_organization,tenant_admin.dua_master where dua_organization.ror_id=dua_master.institutionid and email_domain = ?
+	select ror_id,ror_name,tenantduaexecuted as date from tenant_admin.dua_organization,tenant_admin.dua_master where dua_organization.ror_id=dua_master.institutionid and ? ~ (email_domain||'$')
 	<sql:param>${param.email}</sql:param>
 </sql:query>
 
