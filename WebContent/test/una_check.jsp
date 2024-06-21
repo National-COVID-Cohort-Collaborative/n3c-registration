@@ -6,7 +6,7 @@
 <h2>UNA check: ${param.email}</h2>
 
 <sql:query var="dua" dataSource="jdbc/N3CRegistrationTagLib">
-	select id,name from incommon.domain_map where domain = ?
+	select id,name from incommon.domain_map where ? ~ (domain||'$')
 	<sql:param>${param.email}</sql:param>
 </sql:query>
 
