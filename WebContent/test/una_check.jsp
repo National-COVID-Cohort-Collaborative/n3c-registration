@@ -18,10 +18,15 @@
 	<c:set var="incommon_id">${row.id}</c:set>
 </c:forEach>
 
-<c:if test="${empty incommon_id}">
-	<p>Your institution is not federated with InCommon, so you will need to log into N3C via login.gov. If you already have a
-	login.gov ID that uses your institutional email, click on the button below to continue your registration. If you do not already
-	have a login.gov ID, you need to first create on using your institutional email and then click on the button below to
-	continue your registration.</p>
-	<a href="https://auth.ncats.nih.gov/_api/v2/auth/authenticate?client_id=clinical-n3c-register&connection=Login.gov&redirect_uri=https%3A%2F%2Fauth.ncats.nih.gov%2F_api%2Fv2%2Fauth%2Fn3c_clinical%2Fclinical-n3c-register%2Fsaml&protocol=saml&tenant=n3c_clinical" class="btn btn-primary btn-n3c active" role="button" aria-pressed="true">Login Via Login.gov</a>
-</c:if>
+<c:choose>
+	<c:when test="${empty incommon_id && (param.email =='nih.gov' || param.email == 'hss.gov')}">
+		<a href="https://auth.ncats.nih.gov/_api/v2/auth/authenticate?client_id=clinical-n3c-register&connection=HHS%20-%20PIV%20only&redirect_uri=https%3A%2F%2Fauth.ncats.nih.gov%2F_api%2Fv2%2Fauth%2Fn3c_clinical%2Fclinical-n3c-register%2Fsaml&protocol=saml&tenant=n3c_clinical" class="btn btn-primary btn-n3c active" role="button" aria-pressed="true">Login Using PIV</a>
+	</c:when>
+	<c:when test="${empty incommon_id}">
+		<p>Your institution is not federated with InCommon, so you will need to log into N3C via login.gov. If you already have a
+		login.gov ID that uses your institutional email, click on the button below to continue your registration. If you do not already
+		have a login.gov ID, you need to first create on using your institutional email and then click on the button below to
+		continue your registration.</p>
+		<a href="https://auth.ncats.nih.gov/_api/v2/auth/authenticate?client_id=clinical-n3c-register&connection=Login.gov&redirect_uri=https%3A%2F%2Fauth.ncats.nih.gov%2F_api%2Fv2%2Fauth%2Fn3c_clinical%2Fclinical-n3c-register%2Fsaml&protocol=saml&tenant=n3c_clinical" class="btn btn-primary btn-n3c active" role="button" aria-pressed="true">Login Via Login.gov</a>
+	</c:when>
+</c:choose>
