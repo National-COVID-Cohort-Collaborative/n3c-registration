@@ -171,7 +171,4 @@ WebContent/resources/topojson.js -text
 WebContent/session.jsp -text
 WebContent/sls.jsp -text
 WebContent/submit_registration.jsp -text
-WebContent/test/dua_check.jsp -text
-WebContent/test/index.jsp -text
-WebContent/test/una_check.jsp -text
 /pom.xml -text
