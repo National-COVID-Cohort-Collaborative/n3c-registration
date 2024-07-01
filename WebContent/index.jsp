@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
 <!DOCTYPE html>
 <html>
 	<jsp:include page="head.jsp" flush="true" />
@@ -34,8 +35,8 @@
 			<p class="n3c_alert" style="margin-bottom:0px; display:none;">Please note the form has recently been updated; please review your prior responses to assure accuracy as the order of questions has changed.</p>
 			
 			
-    		
-        	<a href="dologin.jsp" class="btn btn-lg btn-n3c" style="margin-top:30px; margin-bottom:30px;">Click here to Register</a>
+
+        	<a href="<util:applicationRoot/>/authenticate" class="btn btn-lg btn-n3c" style="margin-top:30px; margin-bottom:30px;">Click here to Register</a>
         	
 			
 			
