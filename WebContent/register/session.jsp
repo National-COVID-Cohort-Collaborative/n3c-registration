@@ -33,4 +33,4 @@
         <n3c:registrationUpdatedToNow/>
     </n3c:registration>
     
-    <c:redirect url="register/"/>
+    <c:redirect url="/register/"/>
