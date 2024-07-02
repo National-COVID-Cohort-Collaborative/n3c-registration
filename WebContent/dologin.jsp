@@ -9,7 +9,7 @@
 	<%
 		Auth auth = new Auth(request, response);
 		if (request.getParameter("attrs") == null) {
-			auth.login(request.getContextPath() + "/session.jsp");
+			auth.login(request.getContextPath() + "/register/session.jsp");
 		} else {
 			auth.login(request.getContextPath() + "/attrs.jsp");
 		}

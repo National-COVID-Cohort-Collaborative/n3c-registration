@@ -33,6 +33,9 @@ WebContent/metadata.jsp -text
 WebContent/navbar.jsp -text
 WebContent/profile.jsp -text
 WebContent/register.jsp -text
+WebContent/register/index.jsp -text
+WebContent/register/session.jsp -text
+WebContent/register/submit.jsp -text
 WebContent/resources/DataTables/css/dataTables.bootstrap.css -text
 WebContent/resources/DataTables/css/dataTables.bootstrap.min.css -text
 WebContent/resources/DataTables/css/dataTables.bootstrap4.css -text

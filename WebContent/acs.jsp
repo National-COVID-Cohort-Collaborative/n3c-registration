@@ -65,9 +65,8 @@
 
 			String relayState = request.getParameter("RelayState");
 
-			if (relayState != null && !relayState.isEmpty() && !relayState.equals(ServletUtils.getSelfRoutedURLNoQuery(request)) &&
-				!relayState.contains("/dologin.jsp")) { // We don't want to be redirected to login.jsp neither
-				response.sendRedirect(request.getParameter("RelayState"));
+			if (relayState != null) { // This is an override of the standard check for the direct access of the respective authority
+				response.sendRedirect("register/session.jsp");
 			} else {
 				
 
