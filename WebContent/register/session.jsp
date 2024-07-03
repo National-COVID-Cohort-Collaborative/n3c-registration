@@ -5,6 +5,11 @@
 
     <c:set var="user_email" scope="session">${attributes.get("email")[0]}</c:set>
 
+	<c:if test="${n3c:adminExists(user_email)}">
+        <c:set scope="session" var='admin' value='yes' />
+        <c:redirect url="/admin" />
+	</c:if>
+
     <c:set var="first_name">${attributes.get("given_name")[0]}</c:set>
     <c:set var="last_name">${attributes.get("family_name")[0]}</c:set>
     <c:set var="institution">${attributes.get("org")[0]}</c:set>
