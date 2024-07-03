@@ -16,6 +16,7 @@ WebContent/attrs.jsp -text
 WebContent/authenticate/dua_check.jsp -text
 WebContent/authenticate/index.jsp -text
 WebContent/authenticate/una_check.jsp -text
+WebContent/citizen-scientist/index.jsp -text
 WebContent/dologin.jsp -text
 WebContent/dologout.jsp -text
 WebContent/email/citizen_pending.jsp -text
