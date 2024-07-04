@@ -76,7 +76,7 @@
  
 			<p>NCATS and the N3C team<br>
 			<a href="mailto:data2health@gmail.com">data2health@gmail.com</a></p>
-        	<jsp:include page="email/send.jsp"/>
+<%--         	<jsp:include page="email/send.jsp"/> --%>
         </c:if>
  		</n3c:registration>
 	</div>

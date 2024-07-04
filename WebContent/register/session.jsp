@@ -7,7 +7,6 @@
 
 	<c:if test="${n3c:adminExists(user_email)}">
         <c:set scope="session" var='admin' value='yes' />
-        <c:redirect url="/admin" />
 	</c:if>
 
     <c:set var="first_name">${attributes.get("given_name")[0]}</c:set>
@@ -23,6 +22,9 @@
 	        <n3c:registrationOfficialInstitution officialInstitution="${institution}"/>
 	        <n3c:registrationUpdatedToNow/>
 	    </n3c:registration>
+	    <c:if test="${not empty admin}">
+	        <c:redirect url="/admin" />
+	    </c:if>
         <c:redirect url="../profile.jsp"/>
     </c:if>
 

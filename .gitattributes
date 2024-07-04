@@ -153,6 +153,7 @@ WebContent/resources/d3.hive.min.js -text
 WebContent/resources/d3.v4.min.js -text
 WebContent/resources/dash_style.css -text
 WebContent/resources/dashboard_style.css -text
+WebContent/resources/images/logo.png -text
 WebContent/resources/jquery-colorize.js -text
 WebContent/resources/jquery.hottie.js -text
 WebContent/resources/main_style.css -text
