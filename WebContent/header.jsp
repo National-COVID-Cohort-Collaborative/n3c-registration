@@ -1,3 +1,4 @@
+<%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
 <style>
 
 .navbar {
