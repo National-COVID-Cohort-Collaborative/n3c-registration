@@ -11,7 +11,7 @@
 
 <body>
 
-	<jsp:include page="navbar.jsp" flush="true" />
+	<jsp:include page="header.jsp" flush="true" />
 	
 	<c:if test="${not empty not_logged_in}">
 		<div class=" n3c_alert">
