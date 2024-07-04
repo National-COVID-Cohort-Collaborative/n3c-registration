@@ -2,7 +2,7 @@
 <%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
 
 	<nav class="navbar navbar-expand-lg">
-		<a class="navbar-brand" href="#"><img src="<util:applicationRoot/>/resources/images/logo.png" height=50px>N3C Registration</a>
+		<a class="navbar-brand" href="<util:applicationRoot/>/"><img src="<util:applicationRoot/>/resources/images/logo.png" height=50px>N3C Registration</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -18,8 +18,10 @@
 					</div>
 				</li>
 			</c:if>
-			<li class="nav-item"><a class="nav-link" href="profile.jsp">Profile</a></li>			
-			<li class="nav-item" style="text-align: right;"><a class="nav-link" href="logout.jsp">Logout</a></li>
+			<c:if test="${not empty user_email}">
+				<li class="nav-item"><a class="nav-link" href="profile.jsp">Profile</a></li>			
+				<li class="nav-item" style="text-align: right;"><a class="nav-link" href="logout.jsp">Logout</a></li>
+			</c:if>
 			</ul>
 		</div>
 	</nav>
