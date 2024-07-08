@@ -18,7 +18,7 @@
 
 <body>
 
-	<jsp:include page="navbar.jsp" flush="true" />
+	<jsp:include page="header.jsp" flush="true" />
 	
 	<div class="container center-box shadow-border">
 		<h2 class="header-text">

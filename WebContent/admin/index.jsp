@@ -40,5 +40,6 @@
 			<div id="dua_data" class="col-1">&nbsp;</div>
 		</div>
 	</div>
+	<jsp:include page="../footer.jsp" flush="true" />
 </body>
 </html>

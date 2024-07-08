@@ -56,7 +56,7 @@
 					<n3c:foreachAffiliation var="x" useRegistration="true" sortCriteria="last_name">
 						<n3c:affiliation>
 							<n3c:registration email="${tag_affiliation.email}">
-								<li><n3c:registrationLastName/>, <n3c:registrationFirstName/> (<n3c:registrationEmail/>)
+								<li><a href="user.jsp?email=<n3c:registrationEmail/>"><n3c:registrationLastName/>, <n3c:registrationFirstName/></a> (<n3c:registrationEmail/>)
 							</n3c:registration>
 						</n3c:affiliation>
 					</n3c:foreachAffiliation>
@@ -93,7 +93,7 @@
 						</sql:query>
 						<ul>
 						<c:forEach items="${unmatched.rows}" var="row" varStatus="rowCounter">
-							<li>${row.last_name}, ${row.first_name} (${row.email})
+							<li><a href="user.jsp?email=${row.email}">${row.last_name}, ${row.first_name}</a> (${row.email})
 						</c:forEach>
 						</ul>
 				</div>
@@ -101,5 +101,6 @@
 			</div>
 		</div>
 	</n3c:organization>
+	<jsp:include page="../footer.jsp" flush="true" />
 </body>
 </html>
