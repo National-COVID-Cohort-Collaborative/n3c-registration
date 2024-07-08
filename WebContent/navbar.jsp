@@ -13,14 +13,14 @@
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="<util:applicationRoot/>/admin/opt1">opt 1</a>
-							<a class="dropdown-item" href="<util:applicationRoot/>/admin/opt2">opt 2</a>
+							<a class="dropdown-item" href="<util:applicationRoot/>/admin">Admin Main</a>
+							<a class="dropdown-item" href="<util:applicationRoot/>/admin/organizations.jsp">Organization Roster</a>
 					</div>
 				</li>
 			</c:if>
 			<c:if test="${not empty user_email}">
-				<li class="nav-item"><a class="nav-link" href="profile.jsp">Profile</a></li>			
-				<li class="nav-item" style="text-align: right;"><a class="nav-link" href="logout.jsp">Logout</a></li>
+				<li class="nav-item"><a class="nav-link" href="<util:applicationRoot/>/profile.jsp">Profile</a></li>			
+				<li class="nav-item" style="text-align: right;"><a class="nav-link" href="<util:applicationRoot/>/logout.jsp">Logout</a></li>
 			</c:if>
 			</ul>
 		</div>

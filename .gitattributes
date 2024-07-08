@@ -12,7 +12,16 @@
 WebContent/META-INF/MANIFEST.MF -text
 WebContent/WEB-INF/web.xml -text
 WebContent/acs.jsp -text
+WebContent/admin/add_alternate_domain.jsp -text
+WebContent/admin/bind_organization.jsp -text
 WebContent/admin/index.jsp -text
+WebContent/admin/organization.jsp -text
+WebContent/admin/organizations.jsp -text
+WebContent/admin/submit_organization.jsp -text
+WebContent/admin/unaffiliated_users.jsp -text
+WebContent/admin/unbound_organizations.jsp -text
+WebContent/admin/unregistered_citizens.jsp -text
+WebContent/admin/update_email_domain.jsp -text
 WebContent/attrs.jsp -text
 WebContent/authenticate/dua_check.jsp -text
 WebContent/authenticate/index.jsp -text

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 
 <html>
-	<jsp:include page="../head.jsp" flush="true" />
+<jsp:include page="../head.jsp" flush="true" />
 
 <style type="text/css" media="all">
 @import "../resources/n3c_login_style.css";
@@ -14,21 +14,30 @@
 <body>
 
 	<jsp:include page="../header.jsp" flush="true" />
-	
-	<div class="container center-box">
-		<div class="main-block">
-			<div class="block">
-				<h2 class="center">N3C Registration Admin</h2>
 
+	<div class="main-block">
+		<div class="row flex-wrap">
+			<div id="dua_data" class="col-1">&nbsp;</div>
+			<div id="dua_data" class="col-10">
+				<h2 class="center">N3C Registration Admin</h2>
+			</div>
+			<div id="dua_data" class="col-1">&nbsp;</div>
+		</div>
+
+		<div class="row flex-wrap">
+			<div id="dua_data" class="col-1">&nbsp;</div>
+			<div id="dua_data" class="card col-10">
 				<div class="row flex-wrap">
-					<div id="dua_data" class="card col-6 shade-blue">
-					left
+					<div id="dua_data" class="card col-6">
+						<jsp:include page="unbound_organizations.jsp"/>
+						<jsp:include page="unregistered_citizens.jsp"/>
 					</div>
-					<div id="una_data" class="card col-6 shade-blue">
-					right
+					<div id="una_data" class="card col-6">
+						<jsp:include page="unaffiliated_users.jsp"/>
 					</div>
 				</div>
 			</div>
+			<div id="dua_data" class="col-1">&nbsp;</div>
 		</div>
 	</div>
 </body>
