@@ -13,6 +13,7 @@ WebContent/META-INF/MANIFEST.MF -text
 WebContent/WEB-INF/web.xml -text
 WebContent/acs.jsp -text
 WebContent/admin/add_alternate_domain.jsp -text
+WebContent/admin/bind_affiliation.jsp -text
 WebContent/admin/bind_organization.jsp -text
 WebContent/admin/index.jsp -text
 WebContent/admin/organization.jsp -text
