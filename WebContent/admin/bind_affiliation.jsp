@@ -67,12 +67,42 @@
 							</c:forEach>
 						</tbody>
 					</table>
+
+					<h3>Signatory Organization Domain Aliases</h3>
+					<sql:query var="signatories" dataSource="jdbc/N3CRegistrationTagLib">
+				        select ror_id, name, alternate_domain
+				        from admin.organization natural join admin.alternate_domain
+				        where ? ~* (alternate_domain||'$')
+				        and alternate_domain != ''
+				        order by 2;
+				        <sql:param>${param.email}</sql:param>
+					</sql:query>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th></th>
+								<th>ROR ID</th>
+								<th>Name</th>
+								<th>Email Domain</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${signatories.rows}" var="row" varStatus="rowCounter">
+								<tr>
+									<td><input type="checkbox" name="ror_id" value="${row.ror_id}"></td>
+									<td>${row.ror_id}</td>
+									<td>${row.name}</td>
+									<td>${row.alternate_domain}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 				</div>
 			</div>
 				<div style="text-align: left;">
 					<button class="btn btn-n3c" type="submit" name="action" value="submit">Submit</button>
 				</div>
-				<input type="hidden" name="institution" value="${param.institution}">
+				<input type="hidden" name="email" value="${param.email}">
 			</form>
 	</div>
 	</n3c:registration>

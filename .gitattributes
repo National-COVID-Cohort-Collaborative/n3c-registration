@@ -18,6 +18,7 @@ WebContent/admin/bind_organization.jsp -text
 WebContent/admin/index.jsp -text
 WebContent/admin/organization.jsp -text
 WebContent/admin/organizations.jsp -text
+WebContent/admin/submit_affiliation.jsp -text
 WebContent/admin/submit_organization.jsp -text
 WebContent/admin/unaffiliated_users.jsp -text
 WebContent/admin/unbound_organizations.jsp -text

@@ -24,7 +24,7 @@
 				<div id="official" class="col-5">
 
 					<h2>
-						<n3c:registrationFirstName/>, <n3c:registrationLastName/>
+						<n3c:registrationLastName/>, <n3c:registrationFirstName/>
 					</h2>
 
 					<table>
