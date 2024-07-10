@@ -15,7 +15,7 @@
 	order by name
 </sql:query>
 
-<table>
+<table class="table table-hover">
 	<thead>
 		<tr>
 			<td>ROR ID</td>

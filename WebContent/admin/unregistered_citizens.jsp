@@ -17,7 +17,7 @@
 			<sql:param>${tag_tenantGroup.groupName == 'Tenant' ? 'CLINICAL' : 'COVID'}</sql:param>
 		</sql:query>
 
-		<table>
+		<table class="table table-hover">
 			<thead>
 				<tr>
 					<td>Email</td>

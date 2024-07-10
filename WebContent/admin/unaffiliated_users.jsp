@@ -12,7 +12,7 @@
 	order by created desc
 </sql:query>
 
-<table>
+<table class="table table-hover">
 	<thead>
 		<tr>
 			<td>Email</td>

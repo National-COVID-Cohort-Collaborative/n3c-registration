@@ -23,7 +23,7 @@
 
 				<h2>Organizations</h2>
 
-				<table>
+				<table class="table table-hover">
 					<thead>
 						<tr>
 							<th>ROR ID</th>
