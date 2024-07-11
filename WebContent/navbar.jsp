@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
+<%@ taglib prefix="n3c" uri="http://icts.uiowa.edu/N3CRegistrationTagLib"%>
 
 	<nav class="navbar navbar-expand-lg">
 		<a class="navbar-brand" href="<util:applicationRoot/>/"><img src="<util:applicationRoot/>/resources/images/logo.png" height=50px>N3C Registration</a>
@@ -15,6 +16,18 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="<util:applicationRoot/>/admin">Admin Main</a>
 							<a class="dropdown-item" href="<util:applicationRoot/>/admin/organizations.jsp">Organization Roster</a>
+					</div>
+				</li>
+			</c:if>
+			<c:if test="${not empty admin}">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tenants</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<n3c:foreachTenantGroup var="x">
+							<n3c:tenant>
+								<a class="dropdown-item" href="<util:applicationRoot/>/admin/tenants.jsp?group=<n3c:tenantGroupGroupName/>"><n3c:tenantGroupDescription/></a>
+							</n3c:tenant>
+						</n3c:foreachTenantGroup>
 					</div>
 				</li>
 			</c:if>

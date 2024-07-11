@@ -28,4 +28,4 @@
     </c:redirect>
 </c:if>
 
-<c:redirect url="profile.jsp" />
+<c:redirect url="../profile.jsp" />
