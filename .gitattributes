@@ -20,6 +20,7 @@ WebContent/admin/organization.jsp -text
 WebContent/admin/organizations.jsp -text
 WebContent/admin/submit_affiliation.jsp -text
 WebContent/admin/submit_organization.jsp -text
+WebContent/admin/tenant.jsp -text
 WebContent/admin/unaffiliated_users.jsp -text
 WebContent/admin/unbound_organizations.jsp -text
 WebContent/admin/unregistered_citizens.jsp -text

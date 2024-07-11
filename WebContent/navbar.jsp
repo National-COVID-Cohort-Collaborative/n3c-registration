@@ -24,9 +24,9 @@
 					<a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tenants</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<n3c:foreachTenantGroup var="x">
-							<n3c:tenant>
-								<a class="dropdown-item" href="<util:applicationRoot/>/admin/tenants.jsp?group=<n3c:tenantGroupGroupName/>"><n3c:tenantGroupDescription/></a>
-							</n3c:tenant>
+							<n3c:tenantGroup>
+								<a class="dropdown-item" href="<util:applicationRoot/>/admin/tenant.jsp?group=<n3c:tenantGroupGroupName/>"><n3c:tenantGroupDescription/></a>
+							</n3c:tenantGroup>
 						</n3c:foreachTenantGroup>
 					</div>
 				</li>
