@@ -5,7 +5,6 @@
 <%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
 
     <c:set var="user_email" scope="session">${attributes.get("email")[0]}</c:set>
-	<util:Log level="INFO" message="test" page="registration.jsp"/>
 	
 	<c:if test="${n3c:adminExists(user_email)}">
         <c:set scope="session" var='admin' value='yes' />
@@ -43,8 +42,9 @@
     </n3c:registration>
     
     // check user email to organization primary email_domain
+
 	<sql:query var="primaries" dataSource="jdbc/N3CRegistrationTagLib">
-		select ror_id,email_domain from admin.organization where ? ~ (email_domain||'$')
+		select ror_id,email_domain from admin.organization where ? ~ (email_domain||'$') and email_domain != ''
 		<sql:param>${user_email}</sql:param>
 	</sql:query>
 	<c:forEach items="${primaries.rows}" var="row" varStatus="rowCounter">
@@ -53,7 +53,9 @@
 				<n3c:affiliation/>
 				<n3c:foreachDua var="x">
 					<n3c:dua>
-						<n3c:member groupName="${tag_dua.groupName}"/>
+						<n3c:member groupName="${tag_dua.groupName}">
+							<n3c:memberRequestedToNow/>
+						</n3c:member>
 					</n3c:dua>
 				</n3c:foreachDua>
 			</n3c:organization>
@@ -62,8 +64,9 @@
 	</c:forEach>
     
     // check user email to organization alternate_domains
+
 	<sql:query var="secondaries" dataSource="jdbc/N3CRegistrationTagLib">
-		select ror_id,alternate_domain from admin.alternate_domain where ? ~ (alternate_domain||'$')
+		select ror_id,alternate_domain from admin.alternate_domain where ? ~ (alternate_domain||'$') and alternate_domain != ''
 		<sql:param>${user_email}</sql:param>
 	</sql:query>
 	<c:forEach items="${secondaries.rows}" var="row" varStatus="rowCounter">
@@ -72,7 +75,9 @@
 				<n3c:affiliation/>
 				<n3c:foreachDua var="x">
 					<n3c:dua>
-						<n3c:member groupName="${tag_dua.groupName}"/>
+						<n3c:member groupName="${tag_dua.groupName}">
+							<n3c:memberRequestedToNow/>
+						</n3c:member>
 					</n3c:dua>
 				</n3c:foreachDua>
 			</n3c:organization>
