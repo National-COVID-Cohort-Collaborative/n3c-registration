@@ -23,7 +23,7 @@
 
 				<h2>Organizations</h2>
 
-				<table class="table table-hover">
+				<table id="roster" class="table table-hover">
 					<thead>
 						<tr>
 							<th>ROR ID</th>
@@ -71,5 +71,8 @@
 		</div>
 	</div>
 	<jsp:include page="../footer.jsp" flush="true" />
+	<script type="text/javascript">
+		new DataTable("#roster");
+	</script>
 </body>
 </html>

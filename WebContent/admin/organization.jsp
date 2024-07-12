@@ -27,7 +27,7 @@
 						<n3c:organizationName />
 					</h2>
 
-					<table>
+					<table id="meta">
 						<tbody>
 							<tr>
 								<th>ROR ID</th>
@@ -51,16 +51,6 @@
 							</tr>
 						</tbody>
 					</table>
-					<h4>User Roster</h4>
-					<ul>
-					<n3c:foreachAffiliation var="x" useRegistration="true" sortCriteria="last_name">
-						<n3c:affiliation>
-							<n3c:registration email="${tag_affiliation.email}">
-								<li><a href="user.jsp?email=<n3c:registrationEmail/>"><n3c:registrationLastName/>, <n3c:registrationFirstName/></a> (<n3c:registrationEmail/>)
-							</n3c:registration>
-						</n3c:affiliation>
-					</n3c:foreachAffiliation>
-					</ul>
 				</div>
 				<div id="dua_data" class="col-5">
 					<h4>Update Email Domain</h4>
@@ -99,8 +89,43 @@
 				</div>
 				<div id="dua_data" class="col-1">&nbsp;</div>
 			</div>
+			<div class="row flex-wrap">
+				<div id="dua_data" class="col-1">&nbsp;</div>
+				<div id="dua_data" class="col-10">
+					<h4>User Roster</h4>
+					<table id="roster" class="table table-hover">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Email</th>
+								<th>ORCiD</th>
+								<th>Created</th>
+								<th>Updated</th>
+							</tr>
+						</thead>
+						<tbody>
+							<n3c:foreachAffiliation var="x" useRegistration="true" sortCriteria="last_name">
+								<n3c:affiliation>
+									<n3c:registration email="${tag_affiliation.email}">
+										<tr>
+											<td><a href="user.jsp?email=<n3c:registrationEmail/>"><n3c:registrationLastName />, <n3c:registrationFirstName /></a></td>
+											<td><n3c:registrationEmail /></td>
+											<td><n3c:registrationOrcidId /></td>
+											<td><n3c:registrationCreated /></td>
+											<td><n3c:registrationUpdated /></td>
+										</tr>
+									</n3c:registration>
+								</n3c:affiliation>
+							</n3c:foreachAffiliation>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
 	</n3c:organization>
 	<jsp:include page="../footer.jsp" flush="true" />
+	<script type="text/javascript">
+		new DataTable("#roster");
+	</script>
 </body>
 </html>
