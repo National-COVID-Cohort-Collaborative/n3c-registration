@@ -68,10 +68,10 @@
 				</form>
 				<div class="row flex-wrap">
 					<div id="dua_data" class="card col-6 shade-blue">
-					left
+					
 					</div>
 					<div id="una_data" class="card col-6 shade-blue">
-					right
+					
 					</div>
 				</div>
 			</div>
