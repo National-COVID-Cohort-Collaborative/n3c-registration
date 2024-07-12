@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="n3c" uri="http://icts.uiowa.edu/N3CRegistrationTagLib"%>
 <%@ taglib prefix="util" uri="http://icts.uiowa.edu/tagUtil"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
@@ -9,7 +10,8 @@
 <h2>UNA check: ${param.email}</h2>
 
 <sql:query var="dua" dataSource="jdbc/N3CRegistrationTagLib">
-	select id,name from incommon.domain_map where ? = domain or ? ~ ('([a-z0-9]+[.])+'||domain||'$')
+	select id,name from incommon.domain_map where (? = domain or ? ~ ('([a-z0-9]+[.])+'||domain||'$')) and ? !~ 'nih.gov$'
+	<sql:param>${param.email}</sql:param>
 	<sql:param>${param.email}</sql:param>
 	<sql:param>${param.email}</sql:param>
 </sql:query>
@@ -22,7 +24,7 @@
 </c:forEach>
 
 <c:choose>
-	<c:when test="${empty incommon_id && (param.email =='nih.gov' || param.email == 'hss.gov')}">
+	<c:when test="${(fn:endsWith(param.email,'nih.gov') || fn:endsWith(param.email, 'hhs.gov'))}">
 		<a href="https://auth.ncats.nih.gov/_api/v2/auth/authenticate?client_id=${service}&connection=HHS%20-%20PIV%20only&redirect_uri=https%3A%2F%2Fauth.ncats.nih.gov%2F_api%2Fv2%2Fauth%2F${tenant}%2F${service}%2Fsaml&protocol=saml&tenant=${tenant}" class="btn btn-primary btn-n3c active" role="button" aria-pressed="true">Login Using PIV</a>
 	</c:when>
 	<c:when test="${empty incommon_id}">
