@@ -35,15 +35,28 @@
 					</ul>
 					
 					<h3>Institutional DUAs</h3>
-					<ul>
+				<table id="roster" class="table table-hover">
+					<thead>
+						<tr>
+							<th>ROR ID</th>
+							<th>ROR Name</th>
+							<th>Date Executed</th>
+						</tr>
+					</thead>
+					<tbody>
 					<n3c:foreachDua var="x" useOrganization="true" sortCriteria="name">
 						<n3c:dua>
 							<n3c:organization rorId = "${tag_dua.rorId}">
-								<li><a href="<util:applicationRoot/>/admin/organization.jsp?ror_id=<n3c:organizationRorId/>"><n3c:organizationName/></a>
+								<tr>
+									<td><n3c:organizationRorId/></td>
+									<td><a href="<util:applicationRoot/>/admin/organization.jsp?ror_id=<n3c:organizationRorId/>"><n3c:organizationName/></a></td>
+									<td><n3c:duaDateExecuted/></td>
+								</tr>
 							</n3c:organization>
 						</n3c:dua>
 					</n3c:foreachDua>
-					</ul>
+					</tbody>
+					</table>
 					
 					<h3>Citizen Scientist DUAs</h3>
 					<ul>
@@ -62,5 +75,8 @@
 		</div>
 	</div>
 	<jsp:include page="../footer.jsp" flush="true" />
+	<script type="text/javascript">
+		new DataTable("#roster");
+	</script>
 </body>
 </html>
