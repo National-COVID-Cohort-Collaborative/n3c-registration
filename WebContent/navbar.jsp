@@ -16,6 +16,7 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="<util:applicationRoot/>/admin">Admin Main</a>
 							<a class="dropdown-item" href="<util:applicationRoot/>/admin/organizations.jsp">Organization Roster</a>
+							<a class="dropdown-item" href="<util:applicationRoot/>/admin/users.jsp">User Roster</a>
 					</div>
 				</li>
 			</c:if>

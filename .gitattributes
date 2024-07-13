@@ -26,6 +26,7 @@ WebContent/admin/unbound_organizations.jsp -text
 WebContent/admin/unregistered_citizens.jsp -text
 WebContent/admin/update_email_domain.jsp -text
 WebContent/admin/user.jsp -text
+WebContent/admin/users.jsp -text
 WebContent/attrs.jsp -text
 WebContent/authenticate/dua_check.jsp -text
 WebContent/authenticate/index.jsp -text
