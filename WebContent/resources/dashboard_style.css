@@ -248,6 +248,11 @@ h5{
 	display:none;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
+
 /* ------------------ Top Sign In Band ----------- */
 
 
