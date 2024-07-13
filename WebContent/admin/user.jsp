@@ -53,6 +53,18 @@
 								<th>ORCiD</th>
 								<td><n3c:registrationOrcidId /></td>
 							</tr>
+							<tr>
+								<th>Enclave UID(s)</th>
+								<td>
+									<sql:query var="uid" dataSource="jdbc/N3CRegistrationTagLib">
+										select unite_user_id from n3c_admin.user_binding where user_binding.orcid_id = ?
+										<sql:param><n3c:registrationOrcidId /></sql:param>
+									</sql:query>
+									<c:forEach items="${uid.rows}" var="row" varStatus="rowCounter">
+										${row.unite_user_id}<br>
+									</c:forEach>
+								</td>
+							</tr>							
 						</tbody>
 					</table>
 				</div>

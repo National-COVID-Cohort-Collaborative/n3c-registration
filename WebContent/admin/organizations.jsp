@@ -31,6 +31,8 @@
 							<th>Email Domain</th>
 							<th>InCommon ID</th>
 							<th>InCommon Name</th>
+							<th>COVID DUA</th>
+							<th>Tenant DUA</th>
 							<th>Matched Email Domains</th>
 							<th>Unmatched Email Domains</th>
 						</tr>
@@ -39,6 +41,8 @@
 						<sql:query var="orgs" dataSource="jdbc/N3CRegistrationTagLib">
 							select
 								foo.*,
+								(select count(*) from admin.dua where dua.ror_id=foo.ror_id and group_name='COVID') as covid,
+								(select count(*) from admin.dua where dua.ror_id=foo.ror_id and group_name='Tenant') as tenant,
 								(select count(*) from admin.organization natural join admin.affiliation
 								 where organization.ror_id=foo.ror_id
 								   and (lower(email) ~ lower(email_domain)
@@ -60,6 +64,8 @@
 								<td>${row.email_domain}</td>
 								<td>${row.incommon_id}</td>
 								<td>${row.incommon_name}</td>
+								<td>${row.covid > 0 ? '<i class="fas fa-check fa-lg text-success"></i>' : ''}</td>
+								<td>${row.tenant > 0 ? '<i class="fas fa-check fa-lg text-success"></i>' : ''}</td>
 								<td>${row.matched_email_count}</td>
 								<td>${row.unmatched_email_count}</td>
 							</tr>

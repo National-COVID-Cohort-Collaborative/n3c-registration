@@ -51,6 +51,14 @@
 							</tr>
 						</tbody>
 					</table>
+					<h4>Data Use Agreements</h4>
+					<ul>
+					<n3c:foreachDua var="x" sortCriteria="group_name">
+						<n3c:dua>
+							<li><n3c:duaGroupName/> (<n3c:duaDateExecuted/>)
+						</n3c:dua>
+					</n3c:foreachDua>
+					</ul>
 				</div>
 				<div id="dua_data" class="col-5">
 					<h4>Update Email Domain</h4>
@@ -99,6 +107,7 @@
 								<th>Name</th>
 								<th>Email</th>
 								<th>ORCiD</th>
+								<th>Enclave UID</th>
 								<th>Created</th>
 								<th>Updated</th>
 							</tr>
@@ -111,6 +120,15 @@
 											<td><a href="user.jsp?email=<n3c:registrationEmail/>"><n3c:registrationLastName />, <n3c:registrationFirstName /></a></td>
 											<td><n3c:registrationEmail /></td>
 											<td><n3c:registrationOrcidId /></td>
+											<td>
+												<sql:query var="uid" dataSource="jdbc/N3CRegistrationTagLib">
+													select unite_user_id from n3c_admin.user_binding where user_binding.orcid_id = ?
+													<sql:param><n3c:registrationOrcidId /></sql:param>
+												</sql:query>
+												<c:forEach items="${uid.rows}" var="row" varStatus="rowCounter">
+													${row.unite_user_id}<br>
+												</c:forEach>
+											</td>
 											<td><n3c:registrationCreated /></td>
 											<td><n3c:registrationUpdated /></td>
 										</tr>
